@@ -1,0 +1,123 @@
+commande et terminal git:
+git version : afficher le version de git
+pwd: afficher le repertoire courant
+mkdir cours_git: creer le repertoire cours_git
+ls cours_git: afficher le repertoire cours_git
+cd cours_git: aller vers le repertoire cours_git
+cd .. : aller vers le dossier parent
+
+
+configurer l'outil git:
+git config --global user.name "R Jerimanjaka" : avec --global nous allons donner notre nom et notre adresse email à tous les projets qu'on va travailler sinon , on va retapier notre nom et mail pour chaque projet
+
+git config --global user.email "jerimanjaka@gmail.com" : donner notre adresse email
+
+git config --global --list : lister les configurations
+
+les commandes:  git ou git help: afficher la liste des commandes git utilisables 
+
+
+realiser un repository ou depots git en francais, et commit:
+depots gits: git init : ajouter un dossier caché nommé git: ce dossier contient l'historique de modification
+
+deplacer le modification dans le zone index, 
+commit: prendre l'ensemble les modification dans la zone index et les enregistrer dans l'historique de depots git
+
+Creation de depots git:
+git init: transformer un dossier en depots git : dossier caché qui contient l'ensemble de l'historique et les modification
+
+git status : donner l'etat actuelle de notre environnement de travail: untracked file: file qui ne sont pas encore dans le git
+
+git add nomdefichier :(stage) : indexer le fichier: c'est à dire que les fichiers sont près à être commité.
+git add . : mettre tous les modifications dans le zone index 
+git reset nomdefichier: desindexer le fichier
+
+Commiter : ajouter tous les modifications dans le zone index vers le depots git
+
+git commit -m " nos fichier de base " : le mots m permet d'ajouter un message dans le commit
+
+visualiser le modification entre la version qui est dans le depots et la version qui est est déjà modifié
+
+git diff : voir la modification qui ne sont pas dans la zone d'index et la modification qui est commité
+
+git diff --cached: voir la difference de modification qui est dans le zone d'index et la modification qui est commité
+
+
+Communication securisé ssh entre un machine local et un serveur:
+fournir deux clé à la machine local: clé private et clé public:
+la clé private reste dans la machine mais le clé public doit être envoyer à la serveur.
+la clé public permet de cripter le message à envoyer à la machine local et la clé private permet de decripter ce mesage.
+l'echange de l'information se fais lors d'un clone ou un pull
+
+
+commande permet de creer les clés:
+ssh-keygen: cette commande est fournit avec git bash,
+la paire de clé est est generé dans le dossier caché appelé .ssh, id_rsa: correspond au clé privé tandis que le id_rsa.pub correpond au clé public.
+Sur github, dans settings, ssh and gpg key et clique sur new ssh key: envoyer le cle public vers le serveur github
+
+des que c'est fais on peux cloner avec ssh
+
+recuperer les depots git
+git clone url
+
+git switch -c newBranche(ou git switch ou git checkout): creation d'un nouveau branche et aller 
+vers ce branche
+
+git commit -am "message ": indexer, ajouter un message à la commite et commiter les modifications
+
+git push : faire le push vers l'origin
+
+git push --set-upstream origin newbranche: dans le cas d'un nouveau branche
+ 
+git remote -vvv: voir les different remote qui est en local
+
+git remote add nomDepots urlDepots : pour recuperer un autre remote
+
+git log: lister les manipulation fait
+
+on peut faire le pull apres
+
+
+Sur github:  la branche master est devenu main
+
+difference entre merge et rebase: L'interer et l'historique
+
+1- Merge: ramener la modification de branche à merger vers la branche courant, git vas creer un nouveau commit s'appelle commit de merge
+git merge nomDeBrancheAMerger
+ s'il y a un conflit: resoudre le conflit
+apres faire le git commit -am "Message"
+et c'est bon
+
+2- merge fast-forward :si la branche n'a pas de modification, deplacement de la branche de commit en commit pour arriver à la meme niveau de la branche à merger.
+
+3-  Rebase : Modifier le point de rupture entre deux branches, une branche viens se positionner à la suite de branche
+
+aller à la branche qu'on va rebase, au contraire de merge,
+ git rebase <destination_rebase>: peut être qu'il y a un conflit, modification de branche actuelle
+
+git add fichier : 
+git rebase --continue: pour continuer le rebase
+
+git rebase abord: annuler le rebase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
